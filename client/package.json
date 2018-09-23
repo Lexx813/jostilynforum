@@ -5,12 +5,28 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "build-css": "node-sass-chokidar src/styles/scss -o src/styles/css",
+    "sass": "npm run build-css && node-sass-chokidar src/styles/scss -o src/styles/css --watch --recursive --usePolling --polling-interval 500",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^1.3.3"
   }
 }
