@@ -3,9 +3,7 @@
 const KoaRouter = require("koa-router");
 const json = require("koa-json");
 const helmet = require("koa-helmet");
-const serveStatics = require("koa-static-folder");
 const routes = require("./routes/index.js");
-const path = require("path");
 
 class SetupServer {
   constructor(server) {
@@ -28,7 +26,12 @@ class SetupServer {
   }
 
   staticsAssets() {
-    this.server.use(serveStatics(path.join(process.cwd(), "/client/public")));
+    /*
+    * This is where left, i couldn't server static assets. 
+    * All routes sends the index.html but we need to figure out the right koa static file module
+    *  I spend an hour to server static files in the '/client/public/~' but i couldn't find the right koa module to fix it
+    */
+    // this.server.use( ? );
   }
 
   views() {
