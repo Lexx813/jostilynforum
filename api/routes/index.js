@@ -1,9 +1,9 @@
 "use strict";
 
-// non-react routes needs to be before react routes ( seems like :) )
+// non-react routes
 const AdminRoutes = require("./admin");
 
-// You can change the name or how i coded this reactRoutes
+/// React Routes
 const ReactRoute = require("./user");
 
 module.exports = router => {
