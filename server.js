@@ -10,7 +10,7 @@ const Setup = new SetupServer(app);
   await Setup.initialize();
 
   // Static assets
-  // ...
+  // ... coming soon
 
   // Routes
   await Setup.routes();
