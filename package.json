@@ -29,10 +29,14 @@
   },
   "dependencies": {
     "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
     "koa": "^2.5.3",
     "koa-helmet": "^4.0.0",
     "koa-json": "^2.0.2",
     "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "koa-static-folder": "^0.1.6",
     "winston": "^2.4.2"
   }
 }

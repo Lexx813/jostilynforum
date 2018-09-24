@@ -1,6 +1,7 @@
 "use strict";
 
 const logger = require("../../logger");
+const send = require("koa-send");
 
 class React {
   constructor(router) {
@@ -12,9 +13,8 @@ class React {
     this.router.get("/*/", this.render.bind(this));
   }
 
-  render(ctx, next) {
-    // Here i guess we need to send single html of react code
-    ctx.body = "React route!";
+  async render(ctx, next) {
+    await send(ctx, "/client/public/index.html");
   }
 }
 

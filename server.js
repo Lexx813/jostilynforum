@@ -10,7 +10,10 @@ const Setup = new SetupServer(app);
   await Setup.initialize();
 
   // Static assets
-  // ... coming soon
+  await Setup.staticsAssets();
+
+  // Views
+  await Setup.views();
 
   // Routes
   await Setup.routes();

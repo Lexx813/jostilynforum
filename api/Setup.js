@@ -3,7 +3,9 @@
 const KoaRouter = require("koa-router");
 const json = require("koa-json");
 const helmet = require("koa-helmet");
+const serveStatics = require("koa-static-folder");
 const routes = require("./routes/index.js");
+const path = require("path");
 
 class SetupServer {
   constructor(server) {
@@ -23,6 +25,14 @@ class SetupServer {
     this.server.listen(PORT, () =>
       console.log(`SERVER STARTED AT PORT ${PORT}`)
     );
+  }
+
+  staticsAssets() {
+    this.server.use(serveStatics(path.join(process.cwd(), "/client/public")));
+  }
+
+  views() {
+    // Later for admin panel
   }
 
   routes() {
