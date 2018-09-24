@@ -12,18 +12,18 @@ class Admin {
   register() {
     this.router.get(
       [
-        "/admin/login", // Lets not implement login for now, It will make it difficult for me to test all the time login and out. Annoying
-        "/admin/logout",
-        "/admin/console"
+        "/api/admin/login", // Lets not implement login for now, It will make it difficult for me to test all the time login and out. Annoying
+        "/api/admin/logout",
+        "/api/admin/console"
       ],
       this.render.bind(this)
     );
 
     // Future use!
-    // this.router.post('/admin/remove-user', this.removeUser.bind(this));
-    // this.router.post('/admin/remove-discussion', this.removeDiscussion.bind(this));
-    // this.router.post('/admin/remove-comment', this.removeComment.bind(this));
-    // this.router.post('/admin/block-ip', this.blockIP.bind(this));
+    // this.router.post('/api/admin/remove-user', this.removeUser.bind(this));
+    // this.router.post('/api/admin/remove-discussion', this.removeDiscussion.bind(this));
+    // this.router.post('/api/admin/remove-comment', this.removeComment.bind(this));
+    // this.router.post('/api/admin/block-ip', this.blockIP.bind(this));
   }
 
   render(ctx, next) {
