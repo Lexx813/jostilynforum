@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
+import LayOut from "./hoc/layout";
+// PAGES  this is all our individual pages we will link to
+import HomePage from "./components/Home";
+
 /// this is where we connect our redux,  store and make our routes for the frontend in react
 /// routes meaning links to different pages in our app
 // the provider is what passes our store , meaning our global state, state is data that we are passing into
@@ -12,9 +16,11 @@ const AppRouter = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Switch>
-          <h1>hello this is React</h1>
-        </Switch>
+        <LayOut>
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+          </Switch>
+        </LayOut>
       </Router>
     </Provider>
   );
